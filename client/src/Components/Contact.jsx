@@ -34,65 +34,65 @@ const ContactForm = () => {
                 <div  className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className=" flex flex-col gap-4">
                         <div className="flex flex-col md:flex-row gap-2">
-                            <div className="flex flex-col bg-white p-2">
+                            <div className="flex flex-col ">
                                 <label htmlFor="fn1" className="text-left font-medium">First Name</label>
                                 <input id="fn1" name="FirstName" type="text" maxLength="255" required
-                                className="w-full p-4 border rounded-md" />
+                                className="w-full border rounded-md bg-white p-2" />
                             </div>
 
-                            <div className="flex flex-col bg-white">
+                            <div className="flex flex-col">
                                 <label htmlFor="ln1" className="text-left font-medium">Last Name</label>
                                 <input id="ln1" name="LastName" type="text" maxLength="255" required
-                                className="w-full p-2 border rounded-md" />
+                                className="w-full p-2 border rounded-md  bg-white" />
                             </div>
                         </div>
 
-                        <div className="flex flex-col bg-white">
+                        <div className="flex flex-col ">
                             <label htmlFor="ea1" className="text-left font-medium">Email Address</label>
                             <input id="ea1" name="EmailAddress" type="email" pattern=".*@.*\.[a-z]{2,3}" 
                             data-pattern-mismatch="Invalid email format" maxLength="255" required
-                            className="w-full p-2 border rounded-md" />
+                            className="w-full p-2 border rounded-md bg-white" />
                         </div>
 
-                        <div className="flex flex-col bg-white">
+                        <div className="flex flex-col">
                             <label htmlFor="p1" className="text-left font-medium">Phone</label>
                             <input id="p1" name="Phone" type="tel" required
-                            className="w-full p-2 border rounded-md" />
+                            className="w-full p-2 border rounded-md  bg-white" />
                         </div>
 
-                        <div className="flex flex-col bg-white">
+                        <div className="flex flex-col ">
                             <label htmlFor="o1" className="text-left font-medium">Organization</label>
                             <input id="o1" name="Organization" type="text" maxLength="255" required
-                            className="w-full p-2 border rounded-md" />
+                            className="w-full p-2 border rounded-md  bg-white" />
                         </div>
 
-                        <div className="flex flex-col bg-white pl-4">
+                        <div className="flex flex-col">
                             <label htmlFor="rfp1" className="text-left font-medium">RFP or Documentation (20MB)</label>
                             <input id="rfp1" name="RFP" type="file"
-                            className="w-full p-2 border rounded-md" />
+                            className="w-full p-2 border rounded-md  bg-white" />
                         </div>
 
-                        <div className="flex flex-col bg-white">
+                        <div className="flex flex-col">
                             <label htmlFor="b1" className="text-left font-medium">Budget</label>
                             <input id="b1" name="Budget" type="text" maxLength="255"
-                            className="w-full p-2 border rounded-md" />
+                            className="w-full p-2 border rounded-md  bg-white" />
                         </div>
 
-                        <div className="flex flex-col bg-white">
+                        <div className="flex flex-col ">
                             <label htmlFor="s1" className="text-left font-medium">What color is the sky?</label>
                             <input id="s1" name="SecurityAnswer" type="text" pattern="[Bb][Ll][Uu][Ee]"
                             data-pattern-mismatch="Just type 'blue', it's for security" maxLength="255" required
-                            className="w-full p-2 border rounded-md" />
+                            className="w-full p-2 border rounded-md  bg-white" />
                         </div>
                     </div>
 
-                    <div className="mt-6 bg-white text-left">
+                    <div className="mt-6 text-left">
                         <label htmlFor="m1" className="text-left font-medium">Message or Project Description</label>
                         <textarea
                             id="m1"
                             name="Message"
                             placeholder="Tell us more about your project..."
-                            className="w-full p-2 border rounded-md h-32"
+                            className="w-full p-2 border rounded-md h-32  bg-white"
                         ></textarea>
                     </div>
 

@@ -52,7 +52,7 @@ const ServicesHero = () => {
       <div className="hidden md:grid grid-cols-3 h-screen">
         {/* Fixed Left Column */}
         <div className="col-span-1 bg-white text-gray-800 justify-center h-screen sticky">
-            <div className="relative flex flex-row justify-between mt-36">
+            <div className="relative flex flex-row justify-center">
                 <div>
                     <ul className="space-y-4">
                         {services.map((service, index) => (

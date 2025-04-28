@@ -37,7 +37,7 @@ const ContactForm = () => {
                             <div className="flex flex-col bg-white p-2">
                                 <label htmlFor="fn1" className="text-left font-medium">First Name</label>
                                 <input id="fn1" name="FirstName" type="text" maxLength="255" required
-                                className="w-full p-2 border rounded-md" />
+                                className="w-full p-4 border rounded-md" />
                             </div>
 
                             <div className="flex flex-col bg-white">

@@ -46,7 +46,7 @@ const Hero = () => {
       <div className="hidden md:grid grid-cols-3 h-screen">
         {/* 1fr Column (Fixed Left Side) */}
         <div className="col-span-1 bg-white text-gray-800 flex items-center justify-center h-screen sticky top-0">
-          <p className="text-3xl">Changing Content for Slide {currentSlide + 1}</p>
+          <p className="text-3xl">Changing</p>
         </div>
     
         {/* 2fr Column (Scrollable Right Side) */}

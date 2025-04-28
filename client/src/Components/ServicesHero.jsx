@@ -51,34 +51,31 @@ const ServicesHero = () => {
       {/* Desktop Layout */}
       <div className="hidden md:grid grid-cols-3 h-screen">
         {/* Fixed Left Column */}
-        <div className="col-span-1 bg-white text-gray-800 justify-center h-screen sticky">
-            <div className="relative flex flex-row justify-center">
-                <div>
-                    <ul className="space-y-4">
-                        {services.map((service, index) => (
-                        <li
-                            key={index}
-                            className={`cursor-pointer ${
-                            currentSlide === index ? "font-bold text-blue-500" : "text-gray-500"
-                            }`}
-                            onClick={() => {
-                            const slide = document.getElementById(`service-slide-${index}`);
-                            slide?.scrollIntoView({ behavior: "smooth" });
-                            }}
-                        >
-                            {service.title}
-                        </li>
-                        ))}
-                    </ul>
-                </div>
-                <div>
-                    <h2 className="text-4xl font-bold mb-6">We do</h2>
-                </div>
-                
-            </div>
+        <div className="col-span-1 bg-white text-gray-800 h-screen sticky top-0">
+          <div className="flex flex-row justify-center items-center h-full space-x-16">
+            {/* Menu */}
+            <ul className="space-y-4">
+              {services.map((service, index) => (
+                <li
+                  key={index}
+                  className={`cursor-pointer ${
+                    currentSlide === index ? "font-bold text-blue-500" : "text-gray-500"
+                  }`}
+                  onClick={() => {
+                    const slide = document.getElementById(`service-slide-${index}`);
+                    slide?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  {service.title}
+                </li>
+              ))}
+            </ul>
+            {/* "We do" Title */}
+            <h2 className="text-4xl font-bold">We do</h2>
+          </div>
         </div>
 
-        {/* Scrollable Slides */}
+        {/* Scrollable Right Column */}
         <div
           id="scrollable-slides"
           className="col-span-2 h-screen overflow-y-scroll snap-y snap-mandatory"
@@ -103,7 +100,10 @@ const ServicesHero = () => {
               key={index}
               className={`h-[70vh] ${service.background} flex items-center justify-center`}
             >
-              <p className="text-2xl text-white p-4">{service.content}</p>
+              {/* "We do" combined with content */}
+              <p className="text-2xl text-white p-4">
+                We do {service.content}
+              </p>
             </div>
           ))}
         </div>

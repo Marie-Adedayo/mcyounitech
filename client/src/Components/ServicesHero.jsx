@@ -45,6 +45,24 @@ const ServicesHero = () => {
       }
     };
   }, []);
+  const ColumnText = ({ word }) => {
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          lineHeight: "0.9",
+          gap: "0.1rem", 
+          fontWeight: "bolder",
+        }}
+      >
+        {word.split("").map((letter, index) => (
+          <span key={index}>{letter}</span>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <div className="hero-section w-full h-auto md:h-screen overflow-hidden">
@@ -53,23 +71,32 @@ const ServicesHero = () => {
         {/* Fixed Left Column */}
         <div className="col-span-1 bg-white text-gray-800 h-screen sticky top-0">
           <div className="flex flex-row justify-center items-center h-full space-x-16">
-            {/* Menu */}
-            <ul className="space-y-4">
-              {services.map((service, index) => (
-                <li
-                  key={index}
-                  className={`cursor-pointer ${
-                    currentSlide === index ? "font-bold text-blue-500" : "text-gray-500"
-                  }`}
-                  onClick={() => {
-                    const slide = document.getElementById(`service-slide-${index}`);
-                    slide?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  {service.title}
-                </li>
-              ))}
-            </ul>
+            <div className="flex flex-row gap-10">
+                {/* Menu */}
+                <div className="flex flex-col gap-3 items-center justify-center">
+                    <div className="w-[2px] h-[6rem] bg-red-800"></div>
+                    <ColumnText word="Services" />
+                </div>
+                
+                <div className="flex items-baseline justify-end">
+                    <ul className="space-y-10">
+                        {services.map((service, index) => (
+                        <li
+                            key={index}
+                            className={`cursor-pointer ${
+                            currentSlide === index ? "font-bold text-gray-900" : "text-gray-500"
+                            } hover:text-black`} // Add hover:text-black
+                            onClick={() => {
+                            const slide = document.getElementById(`service-slide-${index}`);
+                            slide?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                        >
+                            {service.title}
+                        </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
             {/* "We do" Title */}
             <h2 className="text-4xl font-bold">We do</h2>
           </div>
@@ -79,7 +106,19 @@ const ServicesHero = () => {
         <div
           id="scrollable-slides"
           className="col-span-2 h-screen overflow-y-scroll snap-y snap-mandatory"
+          style={{
+            scrollbarWidth: "none", // Hides scrollbar in Firefox
+            msOverflowStyle: "none", // Hides scrollbar in Internet Explorer
+          }}
         >
+          {/* Inline CSS to hide scrollbar for Chrome, Edge, and Safari */}
+          <style>
+            {`
+              #scrollable-slides::-webkit-scrollbar {
+                display: none;
+              }
+            `}
+          </style>
           {services.map((service, index) => (
             <div
               id={`service-slide-${index}`}

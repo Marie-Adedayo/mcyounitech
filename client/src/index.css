@@ -14,4 +14,8 @@ body {
   scrollbar-width: 0;
   
 }
+#scrollable-slides::-webkit-scrollbar {
+  display: none;
+}
+
 

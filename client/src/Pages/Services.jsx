@@ -1,6 +1,7 @@
 import Navbar from "../Components/Navbar"
 import ServicesHero from "../Components/ServicesHero"
 import Footer from "../Components/Footer"
+import ContactForm from "../Components/Contact"
 
 
 const Service = () => {
@@ -8,6 +9,7 @@ const Service = () => {
         <>
             <Navbar />
             <ServicesHero />
+            <ContactForm />
             <Footer />
         </>
     )

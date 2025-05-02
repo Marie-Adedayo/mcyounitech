@@ -137,16 +137,17 @@ const ServicesHero = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`h-[70vh] ${service.background} flex items-center justify-center`}
+              className={`h-[70vh] ${service.background} flex items-center text-center justify-center`}
             >
               {/* "We do" combined with content */}
               <p className="text-2xl text-white p-4">
-                We do {service.content}
+                We do {service.content.toLowerCase()}
               </p>
             </div>
           ))}
         </div>
       </div>
+
     </div>
   );
 };

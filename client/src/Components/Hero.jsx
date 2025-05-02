@@ -6,23 +6,31 @@ const Hero = () => {
   const slides = [
     { 
       title: "Question",
-      background: "bg-red-500", 
-      content: "everything" 
+      backgroundImage: "/Images/background1.jpg",
+      overlayColor: "bg-red-500",
+      content: "Explore the endless possibilities",
+      description: "Discover groundbreaking solutions that answer the toughest questions."
     },
     { 
       title: "How do you",
-      background: "bg-blue-500", 
-      content: "demonstrate member value?" 
+      backgroundImage: "/Images/background2.jpg",
+      overlayColor: "bg-blue-500",
+      content: "Demonstrate member value",
+      description: "We help you highlight the benefits and values you bring to your audience."
     },
     { 
       title: "How do you",
-      background: "bg-green-500",
-      content: "Connect to your audience" 
+      backgroundImage: "/Images/background3.jpg",
+      overlayColor: "bg-green-500",
+      content: "Connect to your audience",
+      description: "Engage your audience with innovative solutions and meaningful interactions."
     },
     { 
       title: "Feature",
-      background: "bg-yellow-500", 
-      content: "build your sales pipeline" 
+      backgroundImage: "/Images/background4.jpg",
+      overlayColor: "bg-black",
+      content: "Build your sales pipeline",
+      description: "Strategize and grow with tailored solutions to expand your reach effectively."
     },
   ];
 
@@ -50,21 +58,20 @@ const Hero = () => {
     <div className="hero-section w-full md:h-screen overflow-hidden">
       {/* Desktop Layout */}
       <div className="hidden md:grid grid-cols-3 h-screen">
-        {/* 1fr Column (Fixed Left Side) */}
+        {/* Fixed Left Column */}
         <div className="col-span-1 bg-white text-gray-800 flex items-center justify-center h-screen sticky top-0">
-          <p className="text-3xl text-right">{slides[currentSlide]?.title}</p>
+          <p className="text-3xl font-bold text-right">{slides[currentSlide]?.title}</p>
         </div>
     
-        {/* 2fr Column (Scrollable Right Side) */}
+        {/* Scrollable Right Column */}
         <div
           id="scrollable-slides"
           className="col-span-2 h-screen overflow-y-scroll snap-y snap-mandatory"
           style={{
-            scrollbarWidth: "none", // Hides scrollbar for Firefox
-            msOverflowStyle: "none", // Hides scrollbar for IE
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
           }}
         >
-          {/* Hides scrollbar for Chrome, Edge, and Safari */}
           <style>
             {`
               #scrollable-slides::-webkit-scrollbar {
@@ -75,27 +82,52 @@ const Hero = () => {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`h-screen ${slide.background} snap-start flex items-center justify-center`}
+              className="relative h-screen snap-start"
+              style={{
+                backgroundImage: `url(${slide.backgroundImage})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
-              <p className="text-4xl text-white">{slide.content}</p>
+              {/* Overlay */}
+              <div className={`absolute inset-0 ${slide.overlayColor} opacity-50`}></div>
+              
+              {/* Content */}
+              <div className="relative z-10 flex flex-col items-center justify-center h-full text-start">
+                <h2 className="text-4xl text-white font-bold">{slide.content}</h2>
+                <p className="mt-4 text-xl text-white">{slide.description}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
     
-      {/* Mobile Layout */}
+     {/* Mobile Layout */}
       <div className="block md:hidden h-auto">
         <div className="flex flex-col">
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`h-[70vh] ${slide.background} flex items-center justify-center`}
+              className="relative h-[70vh]"
+              style={{
+                backgroundImage: `url(${slide.backgroundImage})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
-              <p className="text-2xl text-white p-4">{slide.content}</p>
+              {/* Overlay */}
+              <div className={`absolute inset-0 ${slide.overlayColor} opacity-50`}></div>
+              
+              {/* Content */}
+              <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
+                <h2 className="text-2xl text-white font-bold">{slide.title} {slide.content.toLowerCase()}</h2>
+                <p className="mt-2 text-lg text-white">{slide.description}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
+
     </div>
   );
 };

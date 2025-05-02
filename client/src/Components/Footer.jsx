@@ -2,7 +2,7 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="w-full text-sm leading-7 bg-gray-200 text-gray-600 justify-center py-10 px-4 md:px-10">
+    <footer className="w-full text-sm leading-7 bg-gray-200 text-gray-600 justify-center py-6 px-4 md:px-10">
       {/* Badges Section */}
       <div className=" py-6">
         <div className="w-full flex justify-between ">
@@ -36,7 +36,7 @@ const Footer = () => {
           </div>  
         </div>
       </div>
-      <div className="w-full h-[3px] bg-gray-600"></div>
+      <div className="w-full h-[2px] mt-4 bg-gray-600"></div>
       {/* Main Sections */}
       <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 justify-between">
        {/* Company Info Section */}
@@ -58,16 +58,16 @@ const Footer = () => {
         </div>
 
         {/* Social Links & Footer Utility Links */}
-        <div className="flex-1 flex flex-col gap-4 text-end">
-          <div className="flex gap-6 justify-end">
+        <div className="flex-1 flex flex-col gap-4 text-center md:text-end">
+          <div className="flex gap-6 justify-center md:justify-end">
             <a href="/" className="text-lg"><FaFacebookF /></a>
             <a href="/" className="text-lg"><FaLinkedinIn /></a>
             <a href="/" className="text-lg"><FaTwitter /></a>
             <a href="/" className="text-lg"><FaInstagram /></a>
           </div>
-          <div className="py-4">
+          <div className="pt-4">
             <p className="font-medium">All content © 2025 McYounitech</p>
-            <div className="flex justify-end space-x-4">
+            <div className="flex justify-center md:justify-end space-x-4">
               <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
               <a href="javascript:void(0)" className="hover:underline">Do Not Sell/Share My Data</a>
               <a href="/sitemap" className="hover:underline">Sitemap</a>
